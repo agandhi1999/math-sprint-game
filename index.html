@@ -4,12 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
+    <title>Math Sprint Game</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Game Container -->
+    <form>
+        <h1>Math Sprint Game</h1>
+        <div class="question-container">
+            <div class="input-container">
+                <!-- Add Radio Buttons -->
+                <input type="radio" id="Q10" class="inputRadio" name="questions">
+                <label for="Q10">10 Questions <span class="best-score"><span class="bestScore">Best Score</span><span class="bestScoreNumber">0.0s</span></span></label>
+                <input type="radio" id="Q25" class="inputRadio" name="questions">
+                <label for="Q25">25 Questions <span class="best-score"><span class="bestScore">Best Score</span><span class="bestScoreNumber">0.0s</span></span></label>
+                <input type="radio" id="Q50" class="inputRadio" name="questions">
+                <label for="Q50">50 Questions <span class="best-score"><span class="bestScore">Best Score</span><span class="bestScoreNumber">0.0s</span></span></label>
+                <input type="radio" id="Q99" class="inputRadio" name="questions">
+                <label for="Q99">99 Questions <span class="best-score"><span class="bestScore">Best Score</span><span class="bestScoreNumber">0.0s</span></span></label>
+            </div>
+
+            <div class="equations-container hidden"></div>
+            <div class="countdown-container hidden"></div>
+            <div class="results-container hidden">
+                <h2 id="title">Your Time</h2>
+                <h2 id="time"></h2>
+                <h2 class="base-time">Base Time: <span class="base-time" id="base-time-span"></span>s</h2>
+                <h2 class="penalty">Penalty: +<span class="penalty" id="penalty-time-span"></span>s</h2>
+            </div>
+        </div>
+        <!-- Button Container -->
+        <div class="button-container">
+            <!-- Add Submit Button -->
+            <button type="submit" id="submit">Start Round</button>
+            <!-- Add Buttons for Right and Wrong -->
+            <button type="button" id="right" onclick="scrollEquation(1)" hidden>Right</button>
+            <button type="button" id="wrong" onclick="scrollEquation(0)" hidden>Wrong</button>
+            <!-- Button to Play Again -->
+            <button type="button" id="play-again" hidden>Play Again</button>
+        </div>
+    </form>
     <!-- Script -->
     <script src="script.js"></script>
 </body>
